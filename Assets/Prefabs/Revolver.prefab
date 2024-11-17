@@ -188,7 +188,7 @@ MonoBehaviour:
   bulletSpawner: BulletSpawner
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   distanceTrajectoryLine: 10
 --- !u!120 &2345285439002109626
 LineRenderer:
@@ -233,7 +233,6 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:

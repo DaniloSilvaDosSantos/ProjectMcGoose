@@ -45,7 +45,7 @@ public class GunControll : MonoBehaviour
 
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-                DrawTrajectoryLine(bulletSpawnerTransform, angle - 15);
+                DrawTrajectoryLine(bulletSpawnerTransform, angle - 10);
 
                 isAiming = true;
             }
@@ -55,7 +55,7 @@ public class GunControll : MonoBehaviour
                 {
                     GameObject newBullet = Instantiate(bullet, bulletSpawnerTransform.position, bulletSpawnerTransform.rotation);
                     float newBulletAngle = angle + 180f;
-                    newBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, newBulletAngle -15));
+                    newBullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, newBulletAngle -10));
 
                     Debug.Log("atirou");
 
@@ -80,7 +80,7 @@ public class GunControll : MonoBehaviour
         float y = Mathf.Sin(angleRadians);
 
         RaycastHit2D hit = Physics2D.Raycast(originPoint.position, new Vector2(-x, -y), distanceTrajectoryLine * 1000f, wallLayer);
-        RaycastHit2D hit2;
+        //RaycastHit2D hit2;
 
         if (hit.collider != null)
         {
@@ -90,7 +90,7 @@ public class GunControll : MonoBehaviour
             if(hit.normal.x != 0) x = -x;
             if(hit.normal.y != 0) y = -y;
 
-            hit2 = Physics2D.Raycast(
+            /*hit2 = Physics2D.Raycast(
                 hit.point + new Vector2(-x, -y) * 1f, new Vector2(-x, -y), distanceTrajectoryLine - 1f, wallLayer
             );
             
@@ -101,7 +101,7 @@ public class GunControll : MonoBehaviour
             else
             {
                 lr.SetPosition(2, hit.point + new Vector2(-x, -y) * distanceTrajectoryLine);
-            }
+            }*/
 
         }
         else
