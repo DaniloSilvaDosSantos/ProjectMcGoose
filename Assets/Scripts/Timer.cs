@@ -36,10 +36,10 @@ public class Timer : MonoBehaviour
         string strSegundos;
 
         strMinutos = minutos.ToString();
-        if (minutos <= 9)
+        /*if (minutos <= 9)
         {
             strMinutos = "0" + strMinutos;
-        }
+        }*/
         strSegundos = segundos.ToString();
         if (segundos < 10)
         {
@@ -51,7 +51,6 @@ public class Timer : MonoBehaviour
     public void OnFinish()
     {
         //faz algo
-        Debug.Log("cuca");
     }
 
     IEnumerator Contador()
