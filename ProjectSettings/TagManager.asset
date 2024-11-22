@@ -14,7 +14,7 @@ TagManager:
   - Wall
   - Bullet
   - Enemy
-  - TNT
+  - Object
   - Star
   - 
   - 

@@ -77,7 +77,7 @@ public class Bullet : MonoBehaviour
 
         if (parent != null) Destroy(parent.gameObject);
         }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("TNT"))
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Object"))
         {
             Destroy(other.gameObject);
         }
