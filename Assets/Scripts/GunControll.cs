@@ -22,6 +22,8 @@ public class GunControll : MonoBehaviour
         canShot = true;
         isAiming = false;
         lr = GetComponent<LineRenderer>();
+
+        joystick = FindAnyObjectByType<FixedJoystick>();
     }
 
     private void Update()
