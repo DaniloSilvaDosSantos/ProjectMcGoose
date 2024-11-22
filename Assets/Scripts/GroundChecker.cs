@@ -12,14 +12,14 @@ public class GroundChecker : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            if(rbEnemy.velocity.y < 0)
+            if(rbEnemy.velocity.y < -5)
             {
-                rbEnemy.velocity = new Vector2(rbEnemy.velocity.x, rbEnemy.velocity.y * 0.3f);
-
-                if(rbEnemy.velocity.y < 2f && rbEnemy.velocity.y > -2f)
-                {
-                    rbEnemy.velocity = new Vector2(rbEnemy.velocity.x, 0);
-                } 
+                Transform grandparent = transform.parent.parent;
+                Destroy(grandparent.gameObject);
+            }
+            else
+            {
+                rbEnemy.velocity = new Vector2(rbEnemy.velocity.x, 0);
             }
         }
     }
