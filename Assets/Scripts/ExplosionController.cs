@@ -11,8 +11,23 @@ public class ExplosionController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("TNT"))
+        Transform parent = other.transform.parent;
+
+        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            Destroy(other.gameObject);
+
+            if(parent != null) Destroy(parent.gameObject);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("TNT"))
+        {
+            Destroy(other.gameObject);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Star"))
+        {
+            StartsHud startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
+            startsHud.starsAll[2] = true;
+
             Destroy(other.gameObject);
         }
     }

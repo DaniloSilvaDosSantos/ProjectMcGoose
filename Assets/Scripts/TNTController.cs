@@ -20,6 +20,20 @@ public class TNTController : MonoBehaviour
 
     void OnDestroy()
     {
+        ActivatingExplosion();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(rb.velocity.x >= 2 || rb.velocity.y >= 2)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
+    void ActivatingExplosion()
+    {
         explosion.SetActive(true);
         explosion.transform.SetParent(null);
 
@@ -30,13 +44,5 @@ public class TNTController : MonoBehaviour
         CircleCollider2D col;
         col = explosion.GetComponent<CircleCollider2D>();
         col.enabled = true;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(rb.velocity.x >= 2 || rb.velocity.y >= 2)
-        {
-            Destroy(gameObject);
-        }
     }
 }

@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -6,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float initialShotForce = 2000;
     public int duration = 3;
     private float angle;
+    private StartsHud startsHud;
 
     void Start()
     {
@@ -13,6 +15,8 @@ public class Bullet : MonoBehaviour
         rb.AddForce(transform.right * initialShotForce);
 
         angle = transform.rotation.z;
+
+        startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
     }
 
     void Update()
@@ -21,25 +25,65 @@ public class Bullet : MonoBehaviour
 
         if(velocity.magnitude > 0.1f)
         {
+            ChangingAngleBullet(velocity.x, velocity.y);
+        }
 
-            float newAngle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+        if(duration <= -1)
+        {
+            if(CountingEnemies() > 0)
+            {
+                Debug.Log("Derrota");
+            }
+            else
+            {
+                Debug.Log("Vitoria");
+                startsHud.starsAll[0] = true;
+            }
+
+            Destroy(gameObject);
+        }
+    }
+
+    void ChangingAngleBullet(float velocityX, float velocityY)
+    {
+            float newAngle = Mathf.Atan2(velocityY, velocityX) * Mathf.Rad2Deg;
             
             if(newAngle != angle) duration --;
             angle = newAngle;
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, newAngle));
+    }
+
+    int CountingEnemies()
+    {
+        GameObject[] AllObjects = GameObject.FindObjectsOfType<GameObject>();
+        int allEnemies = 0;
+
+        for(int i = 0; i < AllObjects.Length; i++)
+        {
+            if(AllObjects[i].layer == LayerMask.NameToLayer("Enemy")) allEnemies++;
         }
 
-        if(duration <= -1)
-        {
-            Destroy(gameObject);
-        }
+        return allEnemies;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy") || other.gameObject.layer == LayerMask.NameToLayer("TNT"))
+        Transform parent = other.transform.parent;
+
+        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            Destroy(other.gameObject);
+
+        if (parent != null) Destroy(parent.gameObject);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("TNT"))
+        {
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.layer == LayerMask.NameToLayer("Star"))
+        {
+            startsHud.starsAll[2] = true;
             Destroy(other.gameObject);
         }
     }

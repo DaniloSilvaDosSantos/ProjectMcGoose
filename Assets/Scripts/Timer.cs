@@ -13,9 +13,14 @@ public class Timer : MonoBehaviour
     bool rodarRotina = true;
     bool executarFuncao = true;
 
+    private StartsHud starsHud;
+
     private void Awake()
     {
         contador = GetComponent<TMP_Text>();
+
+        starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
+        starsHud.starsAll[1] = true;
     }
 
     void Update()
@@ -50,7 +55,7 @@ public class Timer : MonoBehaviour
 
     public void OnFinish()
     {
-        //faz algo
+        starsHud.starsAll[1] = false;
     }
 
     IEnumerator Contador()
