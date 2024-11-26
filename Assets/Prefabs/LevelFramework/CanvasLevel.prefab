@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutos: 1
-  segundos: 30
+  segundos: 15
   stop: 0
   strContador: 
   contador: {fileID: 0}
