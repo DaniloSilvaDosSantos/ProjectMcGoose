@@ -5,9 +5,20 @@ using UnityEngine;
 
 public class EnemyType2 : EnemyControler
 {
+    public Animator animator;
+
+    public override void Start()
+    {
+        base.Start();
+
+        originalScale = transform.localScale;
+        animator = GetComponent<Animator>();
+    }
     public override void EnemyIdleState()
     {
         base.EnemyIdleState();
+
+        animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
 
         currentIdleTime += Time.fixedDeltaTime;
         
@@ -35,6 +46,16 @@ public class EnemyType2 : EnemyControler
     public override void EnemyWalkState()
     {
         base.EnemyWalkState();
+
+        animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
+        if(rb.velocity.x < 0)
+        {
+            transform.localScale = originalScale;
+        }
+        else if(rb.velocity.x > 0)
+        {
+            transform.localScale = new UnityEngine.Vector3(-originalScale.x, originalScale.y, originalScale.z);
+        }
 
         rb.velocity = new UnityEngine.Vector2(nextPointDirection.x * walkSpeed, rb.velocity.y) ;
     }

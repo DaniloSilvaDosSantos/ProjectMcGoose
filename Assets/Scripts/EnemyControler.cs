@@ -20,6 +20,7 @@ public class EnemyControler : MonoBehaviour
     }
     [HideInInspector] public enemyState currentEnemyState;
     [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public Vector3 originalScale;
 
     public virtual void Start()
     {
@@ -49,16 +50,16 @@ public class EnemyControler : MonoBehaviour
 
     public virtual void EnemyIdleState()
     {
-        //gonas
+        //
     }
 
     public virtual void EnemyWalkState()
     {
-        //jonas
+        //
     }
 
     public virtual void EnemyDiyngState()
     {
-        //tomas
+        //
     }
 }
