@@ -50,11 +50,11 @@ public class EnemyType2 : EnemyControler
         animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
         if(rb.velocity.x < 0)
         {
-            transform.localScale = originalScale;
+            transform.localScale = new UnityEngine.Vector3(-originalScale.x, originalScale.y, originalScale.z);
         }
         else if(rb.velocity.x > 0)
         {
-            transform.localScale = new UnityEngine.Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            transform.localScale = originalScale;
         }
 
         rb.velocity = new UnityEngine.Vector2(nextPointDirection.x * walkSpeed, rb.velocity.y) ;

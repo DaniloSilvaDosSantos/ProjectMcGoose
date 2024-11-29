@@ -81,36 +81,19 @@ public class GunControll : MonoBehaviour
         float x = Mathf.Cos(angleRadians); 
         float y = Mathf.Sin(angleRadians);
 
-        RaycastHit2D hit = Physics2D.Raycast(originPoint.position, new Vector2(-x, -y), distanceTrajectoryLine * 1000f, wallLayer);
+        RaycastHit2D hit = Physics2D.Raycast(originPoint.position, new Vector2(-x, -y), distanceTrajectoryLine, wallLayer);
         //RaycastHit2D hit2;
 
         if (hit.collider != null)
         {
             lr.SetPosition(0, originPoint.position);
             lr.SetPosition(1, hit.point);
-            
-            if(hit.normal.x != 0) x = -x;
-            if(hit.normal.y != 0) y = -y;
-
-            /*hit2 = Physics2D.Raycast(
-                hit.point + new Vector2(-x, -y) * 1f, new Vector2(-x, -y), distanceTrajectoryLine - 1f, wallLayer
-            );
-            
-            if(hit2.collider !=  null)
-            {
-                lr.SetPosition(2, hit2.point);
-            }
-            else
-            {
-                lr.SetPosition(2, hit.point + new Vector2(-x, -y) * distanceTrajectoryLine);
-            }*/
-
         }
         else
         {
             
             lr.SetPosition(0, originPoint.position);
-            lr.SetPosition(1, (Vector2)originPoint.position + new Vector2(-x, -y) * distanceTrajectoryLine * 1000f);
+            lr.SetPosition(1, (Vector2)originPoint.position + new Vector2(-x, -y) * distanceTrajectoryLine);
         }
 
     }
