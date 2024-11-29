@@ -10,8 +10,9 @@ public class Timer : MonoBehaviour
     public bool stop = false;
     public string strContador;
     public TMP_Text contador;
-    bool rodarRotina = true;
-    bool executarFuncao = true;
+    public bool rodarRotina = true;
+    public bool executarFuncao = true;
+    private Coroutine contadorCoroutine;
 
     private StartsHud starsHud;
 
@@ -20,14 +21,14 @@ public class Timer : MonoBehaviour
         contador = GetComponent<TMP_Text>();
 
         starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
-        starsHud.starsAll[1] = true;
+        //starsHud.starsAll[1] = true;
     }
 
     void Update()
     {
         if(rodarRotina && !stop)
         {
-            StartCoroutine(Contador());
+            contadorCoroutine = StartCoroutine(Contador());
             rodarRotina = false;
         }
 
@@ -55,7 +56,16 @@ public class Timer : MonoBehaviour
 
     public void OnFinish()
     {
-        starsHud.starsAll[1] = false;
+        //starsHud.starsAll[1] = false;
+    }
+
+    public void StopTimer()
+    {
+        if(contadorCoroutine != null)
+        {
+            StopCoroutine(contadorCoroutine);
+            contadorCoroutine = null;
+        }
     }
 
     IEnumerator Contador()

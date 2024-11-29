@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public int duration = 3;
     private float angle;
     private StartsHud startsHud;
+    private Timer timer;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class Bullet : MonoBehaviour
         angle = transform.rotation.z;
 
         startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
     void Update()
@@ -37,7 +39,15 @@ public class Bullet : MonoBehaviour
             else
             {
                 Debug.Log("Vitoria");
-                startsHud.starsAll[0] = true;
+                //startsHud.starsAll[0] = true;
+
+                if(timer.executarFuncao)
+                {
+                    timer.StopTimer();
+                    startsHud.starsAll[1] = true;
+                }
+
+                //chamar o GameManager                
             }
 
             Destroy(gameObject);
