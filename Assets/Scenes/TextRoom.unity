@@ -188,26 +188,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2526843360284849917, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[9].m_Data
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2526843360284849917, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[12].m_Data
-      value: 
-      objectReference: {fileID: 1415205471, guid: 4db7aed712de3d8499bbad400bbd7670, type: 3}
-    - target: {fileID: 2526843360284849917, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[9].m_RefCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2526843360284849917, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
-      propertyPath: m_TileSpriteArray.Array.data[12].m_RefCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2526843360284849917, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
-      propertyPath: m_Tiles.Array.data[109].second.m_TileSpriteIndex
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4442129233702538273, guid: 741f624cf974ade4397557f3936bbafa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
