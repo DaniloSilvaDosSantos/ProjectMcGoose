@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
@@ -11,7 +12,8 @@ public class GameController : MonoBehaviour
     private Dictionary<string, bool[]> levelsStars = new Dictionary<string, bool[]>();
     private StartsHud startsHud;
     private Timer timer;
-    private string currentLevel = "Level02";
+    private string currentLevel = "Level02"; //Mudar depois para algo mais apropriado
+    private string savePath;
 
     void Awake()
     {
@@ -31,18 +33,19 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        LoadData();
+
         for(int i = 0; i < levels.Count; i++)
         {
             addLevelStars(levels[i].name, new bool[3]);
         }
 
-        //teste
-        /*foreach(string level in levelsStars.Keys)
-        {
-            bool[] stars = getLevelStars(level);
+        savePath = Path.Combine(Application.persistentDataPath, "levelsStars.json");
+    }
 
-            Debug.Log($"Level: '{level}', stars: '{string.Join(", ", stars)}'");
-        }*/
+    void OnApplicationQuit()
+    {
+        SaveData();
     }
 
     public void addLevelStars(string levelName, bool[] starsValor)
@@ -121,12 +124,12 @@ public class GameController : MonoBehaviour
         }
 
         //teste
-        foreach(string level in levelsStars.Keys)
+        /*foreach(string level in levelsStars.Keys)
         {
             bool[] stars = getLevelStars(level);
 
             Debug.Log($"Level: '{level}', stars: '{string.Join(", ", stars)}'");
-        }
+        }*/
     }
 
     public int CountingEnemies()
@@ -140,5 +143,86 @@ public class GameController : MonoBehaviour
         }
 
         return allEnemies;
+    }
+
+    public void SaveData()
+    {
+        LevelStarsWrapper wrapper = new LevelStarsWrapper();
+
+        foreach (var entry in levelsStars)
+        {
+            wrapper.levelsStarsList.Add(new LevelStars(entry.Key, entry.Value));
+        }
+
+        string json = JsonUtility.ToJson(wrapper, true);
+
+        File.WriteAllText(savePath, json);
+
+        Debug.Log("Dados salvos em {savePath}");
+    }
+
+    public void LoadData()
+    {
+        if(File.Exists(savePath))
+        {
+            string json = File.ReadAllText(savePath);
+
+            LevelStarsWrapper wrapper = JsonUtility.FromJson<LevelStarsWrapper>(json);
+
+            levelsStars.Clear();
+
+            foreach (var levelStars in wrapper.levelsStarsList)
+            {
+                levelsStars.Add(levelStars.levelName, levelStars.stars);
+            }
+
+            Debug.Log("Dados carregados com sucesso");
+        }
+        else
+        {
+            Debug.LogWarning("Arquivo de dados não encontrado");
+        }
+    }
+
+    public void DeleteData()
+    {
+        if(File.Exists(savePath))
+        {
+            string json = File.ReadAllText(savePath);
+
+            LevelStarsWrapper wrapper = JsonUtility.FromJson<LevelStarsWrapper>(json);
+
+            levelsStars.Clear();
+
+            foreach (var levelStars in wrapper.levelsStarsList)
+            {
+                levelsStars.Add(levelStars.levelName, new bool[3]);
+            }
+
+            Debug.Log("Dados apagados com sucesso");
+        }
+        else
+        {
+            Debug.LogWarning("Arquivo de dados não encontrado");
+        }
+    }
+}
+
+[System.Serializable]
+public class LevelStarsWrapper
+{
+    public List<LevelStars> levelsStarsList = new List<LevelStars>();
+}
+
+[System.Serializable]
+public class LevelStars
+{
+    public string levelName;
+    public bool[] stars;
+
+    public LevelStars(string levelName, bool[] stars)
+    {
+        this.levelName = levelName;
+        this.stars = stars;
     }
 }
