@@ -8,8 +8,8 @@ public class Bullet : MonoBehaviour
     public int duration = 3;
     private float angle;
     private StartsHud startsHud;
-    private Timer timer;
     private Vector3 originalScale;
+    private GameController gameController;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         originalScale = transform.localScale;
 
         startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
-        timer = GameObject.Find("Timer").GetComponent<Timer>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     void Update()
@@ -35,23 +35,7 @@ public class Bullet : MonoBehaviour
 
         if(duration <= -1)
         {
-            if(CountingEnemies() > 0)
-            {
-                Debug.Log("Derrota");
-            }
-            else
-            {
-                Debug.Log("Vitoria");
-                startsHud.starsAll[0] = true;
-
-                if(timer.executarFuncao)
-                {
-                    timer.StopTimer();
-                    startsHud.starsAll[1] = true;
-                }
-
-                //chamar o GameManager                
-            }
+            gameController.StartCoroutine(gameController.WinTheLevel());
 
             Destroy(gameObject);
         }
@@ -74,19 +58,6 @@ public class Bullet : MonoBehaviour
             angle = newAngle;
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, newAngle));
-    }
-
-    int CountingEnemies()
-    {
-        GameObject[] AllObjects = GameObject.FindObjectsOfType<GameObject>();
-        int allEnemies = 0;
-
-        for(int i = 0; i < AllObjects.Length; i++)
-        {
-            if(AllObjects[i].layer == LayerMask.NameToLayer("Enemy")) allEnemies++;
-        }
-
-        return allEnemies;
     }
 
     void OnTriggerEnter2D(Collider2D other)
