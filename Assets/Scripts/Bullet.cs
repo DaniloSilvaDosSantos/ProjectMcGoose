@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private float angle;
     private StartsHud startsHud;
     private Timer timer;
+    private Vector3 originalScale;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class Bullet : MonoBehaviour
         rb.AddForce(transform.right * initialShotForce);
 
         angle = transform.rotation.z;
+
+        originalScale = transform.localScale;
 
         startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
@@ -39,7 +42,7 @@ public class Bullet : MonoBehaviour
             else
             {
                 Debug.Log("Vitoria");
-                //startsHud.starsAll[0] = true;
+                startsHud.starsAll[0] = true;
 
                 if(timer.executarFuncao)
                 {
@@ -51,6 +54,15 @@ public class Bullet : MonoBehaviour
             }
 
             Destroy(gameObject);
+        }
+
+        if (rb.velocity.x > 0)
+        {
+            transform.localScale = new UnityEngine.Vector3(originalScale.x, -originalScale.y, originalScale.z);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            transform.localScale = originalScale;
         }
     }
 
