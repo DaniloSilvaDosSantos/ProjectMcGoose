@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-guid: 6e2de150c637e47449f0ad2818185c9e
+guid: 38d0d66255e42084291ac992fed4844a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4694130729015339558
-    second: Pingas1_0
-  - first:
-      213: -413917225719787363
-    second: Pingas1_1
-  - first:
-      213: -8018603828032074668
-    second: Pingas1_2
-  - first:
-      213: 4008912338448340801
-    second: Pingas1_3
-  - first:
-      213: 5071042502962594587
-    second: Pingas1_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -125,106 +110,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pingas1_0
+      name: PingasMorrendo_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 435
-        width: 40
-        height: 39
+        x: 1884
+        y: 33
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ad59bc7f8f81bdeb0800000000000000
-      internalID: -4694130729015339558
+      spriteID: 615c29381db82ee4680769c7932ef628
+      internalID: -364064392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pingas1_1
+      name: PingasMorrendo_4
       rect:
         serializedVersion: 2
-        x: 263
-        y: 435
-        width: 40
-        height: 38
+        x: 1646
+        y: 49
+        width: 62
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d909e8ae978714af0800000000000000
-      internalID: -413917225719787363
+      spriteID: eb37d8200405cbc47bedf939403a0b60
+      internalID: -1981784383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pingas1_2
+      name: PingasMorrendo_7
       rect:
         serializedVersion: 2
-        x: 517
-        y: 435
-        width: 40
-        height: 39
+        x: 2121
+        y: 32
+        width: 103
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 45c8f838d4238b090800000000000000
-      internalID: -8018603828032074668
+      spriteID: 5b6523e587c71ea498e6568eddeadeb6
+      internalID: 1463314129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pingas1_3
+      name: PingasMorrendo_10
       rect:
         serializedVersion: 2
-        x: 9
-        y: 195
-        width: 40
-        height: 39
+        x: 157
+        y: 49
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 147d4ec188482a730800000000000000
-      internalID: 4008912338448340801
+      spriteID: ae94928da5444704caf191f693008ea8
+      internalID: -471842467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pingas1_4
+      name: PingasMorrendo_11
       rect:
         serializedVersion: 2
-        x: 263
-        y: 195
+        x: 408
+        y: 49
         width: 40
-        height: 39
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b134ef5f946ff5640800000000000000
-      internalID: 5071042502962594587
+      spriteID: f014367b9381ac7449d0f224204a4c03
+      internalID: 1726484844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PingasMorrendo_12
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 49
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6f75b6c3f85214c8ee6f93b0b279ad
+      internalID: 512227439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PingasMorrendo_13
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 49
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec271e2ff39f4a549a72411751c5f0db
+      internalID: -553327623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PingasMorrendo_14
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 49
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f196d7156ca484ea26125bd05835af
+      internalID: 727315269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PingasMorrendo_15
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 49
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb21397c3c5087f41859639936d6cc60
+      internalID: 1182852291
       vertices: []
       indices: 
       edges: []
@@ -232,7 +301,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b45ace671545c804cbd1fb680432519a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -240,11 +309,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pingas1_0: -4694130729015339558
-      Pingas1_1: -413917225719787363
-      Pingas1_2: -8018603828032074668
-      Pingas1_3: 4008912338448340801
-      Pingas1_4: 5071042502962594587
+      PingasMorrendo_0: -364064392
+      PingasMorrendo_1: 1148941474
+      PingasMorrendo_10: -471842467
+      PingasMorrendo_11: 1726484844
+      PingasMorrendo_12: 512227439
+      PingasMorrendo_13: -553327623
+      PingasMorrendo_14: 727315269
+      PingasMorrendo_15: 1182852291
+      PingasMorrendo_16: 411350901
+      PingasMorrendo_17: 921051635
+      PingasMorrendo_18: -836670519
+      PingasMorrendo_19: 2001862909
+      PingasMorrendo_2: 1434754506
+      PingasMorrendo_20: -824379778
+      PingasMorrendo_3: 1693058834
+      PingasMorrendo_4: -1981784383
+      PingasMorrendo_5: 619313435
+      PingasMorrendo_6: 1965762157
+      PingasMorrendo_7: 1463314129
+      PingasMorrendo_8: -10890550
+      PingasMorrendo_9: 1532616250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

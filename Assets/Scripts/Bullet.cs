@@ -62,15 +62,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Transform parent = other.transform.parent;
-
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Destroy(other.gameObject);
-
-        if (parent != null) Destroy(parent.gameObject);
-        }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("Object"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Object"))
         {
             Destroy(other.gameObject);
         }

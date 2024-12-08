@@ -14,8 +14,9 @@ public class GroundChecker : MonoBehaviour
         {
             if(rbEnemy.velocity.y < -5)
             {
-                Transform grandparent = transform.parent.parent;
-                Destroy(grandparent.gameObject);
+                EnemyControler enemyScript = transform.parent.GetComponent<EnemyControler>();
+
+                enemyScript.currentEnemyState = EnemyControler.EnemyState.Dying;
             }
             else
             {

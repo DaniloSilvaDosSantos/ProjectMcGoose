@@ -16,7 +16,7 @@ TagManager:
   - Enemy
   - Object
   - Star
-  - 
+  - IgnorePhysics
   - 
   - 
   - 

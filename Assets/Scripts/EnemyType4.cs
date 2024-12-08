@@ -8,11 +8,14 @@ public class EnemyType4 : EnemyControler
     private float stopDistance = 0.2f;
     private float distance = 0;
 
+    public Animator animator;
+
     public override void Start()
     {
         base.Start();
 
         pointA = transform.parent.Find("PointA");
+        animator = GetComponent<Animator>();
     }
     public override void EnemyIdleState()
     {
@@ -52,7 +55,7 @@ public class EnemyType4 : EnemyControler
                     nextPointDirection = (nextPointPosition.position - transform.position).normalized;
                     break;
             }
-            currentEnemyState = enemyState.Walk;
+            currentEnemyState = EnemyState.Walk;
         }
     }
 
@@ -72,15 +75,20 @@ public class EnemyType4 : EnemyControler
             transform.position = pointA.position;
             rb.velocity = new UnityEngine.Vector2(0,0);
             currentIdlePoint = "a";
-            currentEnemyState = enemyState.Idle;
+            currentEnemyState = EnemyState.Idle;
         }
 
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Bullet") || other.CompareTag("Explosion"))
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        }
 
-        if(currentEnemyState != enemyState.Walk)
+        if(currentEnemyState != EnemyState.Walk)
         {
             return;
         } 
@@ -98,7 +106,7 @@ public class EnemyType4 : EnemyControler
                 rb.velocity = new UnityEngine.Vector2(0,0);
                 currentIdlePoint = "b";
                 direction = 1;
-                currentEnemyState = enemyState.Idle;
+                currentEnemyState = EnemyState.Idle;
                 return;
             }
             else if(other.gameObject.name == "PointC")
@@ -106,7 +114,7 @@ public class EnemyType4 : EnemyControler
                 rb.velocity = new UnityEngine.Vector2(0,0);
                 currentIdlePoint = "c";
                 direction = -1;
-                currentEnemyState = enemyState.Idle;
+                currentEnemyState = EnemyState.Idle;
                 return;
             }
         }

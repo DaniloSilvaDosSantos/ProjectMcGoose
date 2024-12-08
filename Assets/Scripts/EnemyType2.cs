@@ -39,7 +39,7 @@ public class EnemyType2 : EnemyControler
                     nextPointDirection = (nextPointPosition.position - transform.position).normalized;
                     break;
             }
-            currentEnemyState = enemyState.Walk;
+            currentEnemyState = EnemyState.Walk;
         }
     }
 
@@ -62,8 +62,13 @@ public class EnemyType2 : EnemyControler
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Bullet") || other.CompareTag("Explosion"))
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        }
 
-        if(currentEnemyState != enemyState.Walk)
+        if(currentEnemyState != EnemyState.Walk)
         {
             return;
         } 
@@ -82,7 +87,7 @@ public class EnemyType2 : EnemyControler
             {
                 rb.velocity = new UnityEngine.Vector2(0,0);
                 currentIdlePoint = "b";
-                currentEnemyState = enemyState.Idle;
+                currentEnemyState = EnemyState.Idle;
                 return;
             }
         }
@@ -94,7 +99,7 @@ public class EnemyType2 : EnemyControler
             {
                 rb.velocity = new UnityEngine.Vector2(0,0);
                 currentIdlePoint = "a";
-                currentEnemyState = enemyState.Idle;
+                currentEnemyState = EnemyState.Idle;
                 return;
             }
         }

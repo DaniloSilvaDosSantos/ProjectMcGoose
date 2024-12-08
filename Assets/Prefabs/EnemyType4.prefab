@@ -161,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.82}
+    oldSize: {x: 0.8, y: 0.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -206,7 +206,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84, y: 0.82}
+    oldSize: {x: 0.8, y: 0.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   nextPointDirection: {x: 0, y: 0}
   currentEnemyState: 0
   rb: {fileID: 0}
+  originalScale: {x: 0, y: 0, z: 0}
   direction: 1
 --- !u!95 &2148744846878319155
 Animator:
@@ -427,7 +428,7 @@ GameObject:
   - component: {fileID: 5145679080408604664}
   - component: {fileID: 4588541125226587051}
   - component: {fileID: 1260612363744547724}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

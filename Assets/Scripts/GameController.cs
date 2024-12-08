@@ -100,6 +100,8 @@ public class GameController : MonoBehaviour
         timer = GameObject.Find("Timer").GetComponent<Timer>();
         starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
 
+        yield return new WaitForSeconds(1.5f);
+
         if(CountingEnemies() > 0)
         {
             Debug.Log("Derrota");

@@ -12,19 +12,19 @@ public class EnemyControler : MonoBehaviour
     [HideInInspector] public float dyingAnimationCount;
     [HideInInspector] public string currentIdlePoint;
     [HideInInspector] public Vector2 nextPointDirection;
-    [HideInInspector] public enum enemyState
+    [HideInInspector] public enum EnemyState
     {
         Idle,
         Walk,
-        dying
+        Dying
     }
-    [HideInInspector] public enemyState currentEnemyState;
+    [HideInInspector] public EnemyState currentEnemyState;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Vector3 originalScale;
 
     public virtual void Start()
     {
-        currentEnemyState = enemyState.Idle;
+        currentEnemyState = EnemyState.Idle;
         currentIdleTime = 0f;
         dyingAnimationCount = 0f;
         currentIdlePoint = "a";
@@ -36,13 +36,13 @@ public class EnemyControler : MonoBehaviour
     {
         switch (currentEnemyState)
         {
-            case enemyState.Idle:
+            case EnemyState.Idle:
                 EnemyIdleState();
                 break;
-            case enemyState.Walk:
+            case EnemyState.Walk:
                 EnemyWalkState();
                 break;
-            case enemyState.dying:
+            case EnemyState.Dying:
                 EnemyDiyngState();
                 break;
         }
@@ -61,5 +61,26 @@ public class EnemyControler : MonoBehaviour
     public virtual void EnemyDiyngState()
     {
         //
+    }
+
+    public virtual void DestroyHimself()
+    {
+        Transform parent = transform.parent;
+        
+        Destroy(parent.gameObject);
+        Destroy(gameObject);
+    }
+
+    public virtual void StartDeathAnimation()
+    {
+        foreach (Collider2D collider in GetComponents<Collider2D>())
+        {
+            collider.enabled = false;
+        }
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.velocity = Vector2.zero;
+
     }
 }
