@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     private static GameController instanceGameController;
     [SerializeField] private List<GameObject> levels = new List<GameObject>();
     private Dictionary<string, bool[]> levelsStars = new Dictionary<string, bool[]>();
-    private StartsHud startsHud;
+    private StartsHud starsHud;
     private Timer timer;
     private string currentLevel = "Level02"; //Mudar depois para algo mais apropriado
     private string savePath;
@@ -26,9 +26,6 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
-        timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
     void Start()
@@ -41,6 +38,11 @@ public class GameController : MonoBehaviour
         }
 
         savePath = Path.Combine(Application.persistentDataPath, "levelsStars.json");
+    }
+
+    void Update()
+    {
+        //faz algo
     }
 
     void OnApplicationQuit()
@@ -89,11 +91,15 @@ public class GameController : MonoBehaviour
 
     public void PlayerGetFirstStarInTheLevel()
     {
-        startsHud.starsAll[0] = true;
+        starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
+        starsHud.starsAll[0] = true;
     }
 
     public IEnumerator WinTheLevel()
     {
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
+        starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
+
         if(CountingEnemies() > 0)
         {
             Debug.Log("Derrota");
@@ -111,14 +117,14 @@ public class GameController : MonoBehaviour
             if(timer.executarFuncao)
             {
                 timer.StopTimer();
-                startsHud.starsAll[1] = true;
+                starsHud.starsAll[1] = true;
             }
 
             yield return new WaitForSeconds(0.5f);
 
             PlayerGetFirstStarInTheLevel();
 
-            updateLevelStars(currentLevel, startsHud.starsAll);
+            updateLevelStars(currentLevel, starsHud.starsAll);
             //EnableWinScreen();
 
         }
@@ -180,7 +186,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Arquivo de dados não encontrado");
+            Debug.Log("Arquivo de dados não encontrado");
         }
     }
 

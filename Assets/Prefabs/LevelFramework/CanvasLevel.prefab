@@ -423,6 +423,8 @@ MonoBehaviour:
   stop: 0
   strContador: 
   contador: {fileID: 0}
+  rodarRotina: 1
+  executarFuncao: 1
 --- !u!1 &3988273405826141165
 GameObject:
   m_ObjectHideFlags: 0
