@@ -152,8 +152,34 @@ public class MenuController : MonoBehaviour
         thuthuluPanel.SetActive(false);
         GerPanel.SetActive(false);
         BlackStarPanel.SetActive(false);
-        MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(true);
         currentMainMenuState = MainMenuState.Options;
+    }
+
+    public void PlayGame()
+    {
+        Debug.Log("Opening the level dificulty screen");
+    }
+
+    public void OpenOptions()
+    {
+        Debug.Log("Opening Options Menu");
+        ShowOptionsPanel();
+    }
+
+    public void ExitOptionsMainMenu()
+    {
+        currentMainMenuState = MainMenuState.MainMenu;
+        OpcoesPanel.SetActive(false);
+    }
+
+    public void ExitGane()
+    {
+        Debug.Log("Exiting game!");
+        Application.Quit();
+        // Testing on Unity's editor
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
