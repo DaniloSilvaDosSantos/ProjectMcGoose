@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7592847355520118339}
   - component: {fileID: 5004972868968993138}
   - component: {fileID: 6343522160504585848}
+  - component: {fileID: 1062633732952914677}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -173,6 +174,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be07947c6e05e5649bb4ec67b2fbf7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1062633732952914677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602483086439156226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627d07d329046064c8d6390630c3c868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8533806973838276144
