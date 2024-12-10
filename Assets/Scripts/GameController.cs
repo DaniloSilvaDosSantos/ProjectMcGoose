@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     private Dictionary<string, bool[]> levelsStars = new Dictionary<string, bool[]>();
     private StartsHud starsHud;
     private Timer timer;
-    private string currentLevel; //Mudar depois para algo mais apropriado
+    public string CurrentLevel { get; set; }
     private string savePath;
 
     void Awake()
@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
 
             PlayerGetFirstStarInTheLevel();
 
-            updateLevelStars(currentLevel, starsHud.starsAll);
+            updateLevelStars(CurrentLevel, starsHud.starsAll);
             //EnableWinScreen();
 
         }

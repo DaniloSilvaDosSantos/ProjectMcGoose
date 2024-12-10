@@ -13,10 +13,12 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private bool isLocked;
     [SerializeField] private GameObject lockImage;
     private GameController gameController;
+    private SceneTransitionManager sceneTransitionManager;
 
     void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
 
         starsCollected = gameController.getLevelStars(gameObject.name);
         //Debug.Log(string.Join(", ", starsCollected));
@@ -71,5 +73,11 @@ public class LevelButton : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void LoadLevel()
+    {
+        gameController.CurrentLevel = gameObject.name;
+        sceneTransitionManager.TransitionToScene("LevelRoom");
     }
 }

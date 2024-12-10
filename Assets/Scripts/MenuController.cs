@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -35,19 +36,26 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        switch (currentMainMenuState)
+        if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            case MainMenuState.SplashScreenThuthulu:
-                HandleFade(thuthuluPanel, "fadeOut", ShowGerPanel);
-                break;
+            switch (currentMainMenuState)
+            {
+                case MainMenuState.SplashScreenThuthulu:
+                    HandleFade(thuthuluPanel, "fadeOut", ShowGerPanel);
+                    break;
 
-            case MainMenuState.SplashScreenGer:
-                HandleFade(GerPanel, "fadeOut", ShowBlackStarPanel);
-                break;
-            
-            case MainMenuState.SplashScreenBlackStar:
-                HandleFade(BlackStarPanel, "fadeOut", ShowMainMenuPanel);
-                break;
+                case MainMenuState.SplashScreenGer:
+                    HandleFade(GerPanel, "fadeOut", ShowBlackStarPanel);
+                    break;
+                
+                case MainMenuState.SplashScreenBlackStar:
+                    HandleFade(BlackStarPanel, "fadeOut", ShowMainMenuPanel);
+                    break;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "LevelRoom")
+        {
+            //Faz algo?
         }
     }
 
