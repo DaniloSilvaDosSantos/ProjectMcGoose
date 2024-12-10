@@ -14,6 +14,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject OpcoesPanel;
     [SerializeField] private GameObject LevelSelectionPanel;
+    [SerializeField] private GameObject winScreenPanel;
+    [SerializeField] private GameObject freezedScreenPanel;
 
     [HideInInspector] public enum MainMenuState
     {
@@ -22,7 +24,9 @@ public class MenuController : MonoBehaviour
         SplashScreenBlackStar,
         MainMenu,
         Options,
-        LevelSelection
+        LevelSelection,
+        WinScreen,
+        GameOver
     }
     [HideInInspector] public MainMenuState currentMainMenuState;
     private string fadeAnimation;
@@ -38,11 +42,8 @@ public class MenuController : MonoBehaviour
         else if(SceneManager.GetActiveScene().name == "LevelRoom")
         {
             GameController gameController = GameObject.Find("GameController").GetComponent<GameController>();
-            //gameController.CreateLevel(gameController.CurrentLevel);
-            gameController.CreateLevel("Level01");
+            gameController.CreateLevel(gameController.CurrentLevel);
         }
-
-        
     }
 
     void Update()
@@ -109,6 +110,8 @@ public class MenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
         LevelSelectionPanel.SetActive(false);
+        winScreenPanel.SetActive(false);
+        freezedScreenPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenThuthulu;
 
@@ -128,6 +131,8 @@ public class MenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
         LevelSelectionPanel.SetActive(false);
+        winScreenPanel.SetActive(false);
+        freezedScreenPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenGer;
 
@@ -147,6 +152,8 @@ public class MenuController : MonoBehaviour
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
         LevelSelectionPanel.SetActive(false);
+        winScreenPanel.SetActive(false);
+        freezedScreenPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenBlackStar;
 
@@ -166,6 +173,8 @@ public class MenuController : MonoBehaviour
         MainMenuPanel.SetActive(true);
         OpcoesPanel.SetActive(false);
         LevelSelectionPanel.SetActive(false);
+        winScreenPanel.SetActive(false);
+        freezedScreenPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.MainMenu;
 
@@ -178,6 +187,8 @@ public class MenuController : MonoBehaviour
         GerPanel.SetActive(false);
         BlackStarPanel.SetActive(false);
         OpcoesPanel.SetActive(true);
+        winScreenPanel.SetActive(false);
+        freezedScreenPanel.SetActive(false);
         currentMainMenuState = MainMenuState.Options;
     }
 
@@ -216,4 +227,18 @@ public class MenuController : MonoBehaviour
         currentMainMenuState = MainMenuState.MainMenu;
         LevelSelectionPanel.SetActive(false);
     }
+
+    public void OpenWinScreen()
+    {
+        winScreenPanel.SetActive(true);
+        currentMainMenuState = MainMenuState.WinScreen;
+    }
+
+    public void OpenFreezedScreen()
+    {
+        freezedScreenPanel.SetActive(true);
+        currentMainMenuState = MainMenuState.GameOver;
+    }
+
+    
 }

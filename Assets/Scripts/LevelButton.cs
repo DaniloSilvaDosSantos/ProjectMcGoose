@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
+    [SerializeField] private bool[] starsCollectedPastLevel = {false, false, false};
     [SerializeField] private bool[] starsCollected = {false, false, false};
     [SerializeField] private GameObject[] starsIcon = {null, null, null}; 
     [SerializeField] private int totalStars = 0;
@@ -20,25 +21,54 @@ public class LevelButton : MonoBehaviour
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
 
-        starsCollected = gameController.getLevelStars(gameObject.name);
-        //Debug.Log(string.Join(", ", starsCollected));
-
         isLocked = true;
+        
+        switch(gameObject.name)
+        {
+            case "Level01":
+                isLocked = false;
+                starsCollected = gameController.getLevelStars("Level01");
+                break;
+            case "Level02":
+                starsCollectedPastLevel = gameController.getLevelStars("Level01");
+                starsCollected = gameController.getLevelStars("Level02");
+                break;
+            case "Level03":
+                starsCollectedPastLevel = gameController.getLevelStars("Level02");
+                starsCollected = gameController.getLevelStars("Level03");
+                break;
+            case "Level04":
+                starsCollectedPastLevel = gameController.getLevelStars("Level03");
+                starsCollected = gameController.getLevelStars("Level04");
+                break;
+            case "Level05":
+                starsCollectedPastLevel = gameController.getLevelStars("Level04");
+                starsCollected = gameController.getLevelStars("Level05");
+                break;
+            case "Level06":
+                starsCollectedPastLevel = gameController.getLevelStars("Level05");
+                starsCollected = gameController.getLevelStars("Level06");
+                break;
+            case "Level07":
+                starsCollectedPastLevel = gameController.getLevelStars("Level06");
+                starsCollected = gameController.getLevelStars("Level07");
+                break;
+            case "Level08":
+                starsCollectedPastLevel = gameController.getLevelStars("Level07");
+                starsCollected = gameController.getLevelStars("Level08");
+                break;
+            case "Level09":
+                starsCollectedPastLevel = gameController.getLevelStars("Level08");
+                starsCollected = gameController.getLevelStars("Level09");
+                break;
+        }
+
         for(int i = 0; i < starsCollected.Length; i++)
         {
-            if(starsCollected[i] == true){
+            if(starsCollectedPastLevel[i] == true)
+            {
                 isLocked = false;
-                totalStars++;
             } 
-        }
-
-        if(gameObject.name == "Level01")
-        {
-            isLocked = false;
-        }
-        else
-        {
-            isLocked = true;
         }
 
         if(isLocked)
@@ -48,13 +78,20 @@ public class LevelButton : MonoBehaviour
         }
         else
         {
+            for(int i = 0; i < starsCollected.Length; i++)
+            {
+                if(starsCollected[i] == true)
+                {
+                    totalStars++;
+                } 
+            }
+
             GetComponent<Button>().enabled = true;
             lockImage.SetActive(false);
         }
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!isLocked)

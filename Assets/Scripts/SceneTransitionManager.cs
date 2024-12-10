@@ -34,14 +34,14 @@ public class SceneTransitionManager : MonoBehaviour
 
     private IEnumerator LoadScene(string sceneName)
     {
-        transitionAnim.SetTrigger("End");
+        transitionAnim.SetTrigger("Start");
         SceneManager.sceneLoaded += OnSceneLoaded;
         transitionCanvas.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(sceneName);
         yield return new WaitUntil(() => SceneManager.GetActiveScene().name == sceneName);
-        transitionAnim.SetTrigger("Start");
-        yield return new WaitForSeconds(0.5f);
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(2f);
         transitionCanvas.SetActive(false);
     }
 }

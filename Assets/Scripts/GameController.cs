@@ -112,6 +112,9 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
 
+            MenuController menuController = GameObject.Find("CanvasMenu").GetComponent<MenuController>();
+            menuController.OpenFreezedScreen();
+
             //EnableDefeatScreen();
         }
         else
@@ -129,8 +132,11 @@ public class GameController : MonoBehaviour
             PlayerGetFirstStarInTheLevel();
 
             updateLevelStars(CurrentLevel, starsHud.starsAll);
-            //EnableWinScreen();
 
+            MenuController menuController = GameObject.Find("CanvasMenu").GetComponent<MenuController>();
+            menuController.OpenWinScreen();
+
+            //EnableWinScreen();
         }
 
         //teste
