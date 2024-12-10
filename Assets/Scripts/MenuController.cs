@@ -32,9 +32,12 @@ public class MenuController : MonoBehaviour
     private string fadeAnimation;
     private Color tempColor;
     [SerializeField] float fadeAnimationSpeed;
+    private Radio radio;
 
     void Start()
     {
+        radio = GameObject.Find("Radio").GetComponent<Radio>();
+
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
             ShowThuthuluPanel();
@@ -167,6 +170,8 @@ public class MenuController : MonoBehaviour
 
     public void ShowMainMenuPanel()
     {
+        radio.PlayMainMenuTheme();
+
         thuthuluPanel.SetActive(false);
         GerPanel.SetActive(false);
         BlackStarPanel.SetActive(false);

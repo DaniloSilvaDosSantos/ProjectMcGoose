@@ -15,11 +15,13 @@ public class WinScreen : MonoBehaviour
     [SerializeField] private Sprite[] numberSprites;
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
+    private Radio radio;
 
     void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
+        radio = GameObject.Find("Radio").GetComponent<Radio>();
 
         starsCollected = gameController.getLevelStars(gameController.CurrentLevel);
         //Debug.Log(string.Join(", ", starsCollected));
@@ -84,6 +86,7 @@ public class WinScreen : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        radio.StopMusic();
         gameController.CurrentLevel = null;
         sceneTransitionManager.TransitionToScene("MainMenu");
     }

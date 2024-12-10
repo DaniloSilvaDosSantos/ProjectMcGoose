@@ -15,11 +15,13 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private GameObject lockImage;
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
+    private Radio radio;
 
     void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
+        radio = GameObject.Find("Radio").GetComponent<Radio>();
 
         isLocked = true;
         
@@ -114,6 +116,8 @@ public class LevelButton : MonoBehaviour
 
     public void LoadLevel()
     {
+        radio.StopMusic();
+        radio.PlayMusicFunctionDelay("PlayLevelTheme");
         gameController.CurrentLevel = gameObject.name;
         sceneTransitionManager.TransitionToScene("LevelRoom");
     }
