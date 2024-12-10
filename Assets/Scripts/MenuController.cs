@@ -12,6 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject BlackStarPanel;
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject OpcoesPanel;
+    [SerializeField] private GameObject LevelSelectionPanel;
 
     [HideInInspector] public enum MainMenuState
     {
@@ -20,6 +21,7 @@ public class MenuController : MonoBehaviour
         SplashScreenBlackStar,
         MainMenu,
         Options,
+        LevelSelection
     }
     [HideInInspector] public MainMenuState currentMainMenuState;
     private string fadeAnimation;
@@ -58,7 +60,7 @@ public class MenuController : MonoBehaviour
 
         if (fadeAnimation == "fadeIn")
         {
-            Debug.Log($"Fade Animation: {fadeAnimation}, Alpha: {tempColor.a}");
+            //Debug.Log($"Fade Animation: {fadeAnimation}, Alpha: {tempColor.a}");
             tempColor.a += 1.0f / fadeAnimationSpeed * Time.deltaTime;
             if (tempColor.a >= 1f)
             {
@@ -68,7 +70,7 @@ public class MenuController : MonoBehaviour
         }
         else if (fadeAnimation == "fadeOut")
         {
-            Debug.Log($"Fade Animation: {fadeAnimation}, Alpha: {tempColor.a}");
+            //Debug.Log($"Fade Animation: {fadeAnimation}, Alpha: {tempColor.a}");
             tempColor.a -= 1.0f / fadeAnimationSpeed * Time.deltaTime;
             if (tempColor.a <= 0f)
             {
@@ -87,6 +89,7 @@ public class MenuController : MonoBehaviour
         BlackStarPanel.SetActive(false);
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
+        LevelSelectionPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenThuthulu;
 
@@ -105,6 +108,7 @@ public class MenuController : MonoBehaviour
         BlackStarPanel.SetActive(false);
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
+        LevelSelectionPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenGer;
 
@@ -123,6 +127,7 @@ public class MenuController : MonoBehaviour
         BlackStarPanel.SetActive(true);
         MainMenuPanel.SetActive(false);
         OpcoesPanel.SetActive(false);
+        LevelSelectionPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.SplashScreenBlackStar;
 
@@ -141,6 +146,7 @@ public class MenuController : MonoBehaviour
         BlackStarPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
         OpcoesPanel.SetActive(false);
+        LevelSelectionPanel.SetActive(false);
 
         currentMainMenuState = MainMenuState.MainMenu;
 
@@ -158,12 +164,15 @@ public class MenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("Opening the level dificulty screen");
+        //Debug.Log("Opening the level dificulty screen");
+
+        LevelSelectionPanel.SetActive(true);
+        currentMainMenuState = MainMenuState.LevelSelection;
     }
 
     public void OpenOptions()
     {
-        Debug.Log("Opening Options Menu");
+        //Debug.Log("Opening Options Menu");
         ShowOptionsPanel();
     }
 
@@ -175,11 +184,17 @@ public class MenuController : MonoBehaviour
 
     public void ExitGane()
     {
-        Debug.Log("Exiting game!");
+        //Debug.Log("Exiting game!");
         Application.Quit();
         // Testing on Unity's editor
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    public void ExitLevelSelection()
+    {
+        currentMainMenuState = MainMenuState.MainMenu;
+        LevelSelectionPanel.SetActive(false);
     }
 }

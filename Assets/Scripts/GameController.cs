@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     private Dictionary<string, bool[]> levelsStars = new Dictionary<string, bool[]>();
     private StartsHud starsHud;
     private Timer timer;
-    private string currentLevel = "Level02"; //Mudar depois para algo mais apropriado
+    private string currentLevel; //Mudar depois para algo mais apropriado
     private string savePath;
 
     void Awake()
@@ -26,10 +26,7 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    void Start()
-    {
         LoadData();
 
         for(int i = 0; i < levels.Count; i++)
@@ -40,9 +37,14 @@ public class GameController : MonoBehaviour
         savePath = Path.Combine(Application.persistentDataPath, "levelsStars.json");
     }
 
+    void Start()
+    {
+        //
+    }
+
     void Update()
     {
-        //faz algo
+        //
     }
 
     void OnApplicationQuit()
