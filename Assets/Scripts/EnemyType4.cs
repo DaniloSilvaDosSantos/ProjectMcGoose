@@ -9,6 +9,7 @@ public class EnemyType4 : EnemyControler
     private float distance = 0;
 
     public Animator animator;
+    public GroundChecker groundChecker;
 
     public override void Start()
     {
@@ -16,10 +17,17 @@ public class EnemyType4 : EnemyControler
 
         pointA = transform.parent.Find("PointA");
         animator = GetComponent<Animator>();
+        groundChecker = GetComponentInChildren<GroundChecker>();
     }
     public override void EnemyIdleState()
     {
         base.EnemyIdleState();
+
+        if(groundChecker.canDie)
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        } 
 
         currentIdleTime += Time.fixedDeltaTime;
         
@@ -62,6 +70,12 @@ public class EnemyType4 : EnemyControler
     public override void EnemyWalkState()
     {
         base.EnemyWalkState();
+
+        if(groundChecker.canDie)
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        } 
 
         rb.velocity = new UnityEngine.Vector2(nextPointDirection.x * walkSpeed, rb.velocity.y) ;
 

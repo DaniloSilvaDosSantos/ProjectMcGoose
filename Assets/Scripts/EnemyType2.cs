@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyType2 : EnemyControler
 {
     public Animator animator;
+    public GroundChecker groundChecker;
 
     public override void Start()
     {
@@ -13,10 +14,17 @@ public class EnemyType2 : EnemyControler
 
         originalScale = transform.localScale;
         animator = GetComponent<Animator>();
+        groundChecker = GetComponentInChildren<GroundChecker>();
     }
     public override void EnemyIdleState()
     {
         base.EnemyIdleState();
+
+        if(groundChecker.canDie)
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        } 
 
         animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
 
@@ -46,6 +54,12 @@ public class EnemyType2 : EnemyControler
     public override void EnemyWalkState()
     {
         base.EnemyWalkState();
+
+        if(groundChecker.canDie)
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        } 
 
         animator.SetFloat("VelocityX", Mathf.Abs(rb.velocity.x));
         if(rb.velocity.x < 0)

@@ -3,20 +3,19 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     private Rigidbody2D rbEnemy;
-    void Start()
-    {
-        rbEnemy = GetComponentInParent<Rigidbody2D>();
-    }
+    public bool canDie = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        rbEnemy = GetComponentInParent<Rigidbody2D>();
+        
         if(other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             if(rbEnemy.velocity.y < -5)
             {
-                EnemyControler enemyScript = transform.parent.GetComponent<EnemyControler>();
-
-                enemyScript.currentEnemyState = EnemyControler.EnemyState.Dying;
+                //EnemyControler enemyScript = transform.parent.GetComponentInParent<EnemyControler>();
+                //enemyScript.currentEnemyState = EnemyControler.EnemyState.Dying;
+                canDie = true;
             }
             else
             {

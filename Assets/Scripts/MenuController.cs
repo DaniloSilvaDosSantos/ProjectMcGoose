@@ -31,7 +31,18 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
-        ShowThuthuluPanel();
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            ShowThuthuluPanel();
+        }
+        else if(SceneManager.GetActiveScene().name == "LevelRoom")
+        {
+            GameController gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            //gameController.CreateLevel(gameController.CurrentLevel);
+            gameController.CreateLevel("Level01");
+        }
+
+        
     }
 
     void Update()

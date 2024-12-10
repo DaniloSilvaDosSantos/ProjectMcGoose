@@ -216,6 +216,40 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("Arquivo de dados não encontrado");
         }
     }
+
+    public void CreateLevel(string levelName)
+    {
+        switch(levelName)
+        {
+            case "Level01":
+                Instantiate(levels[0], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level02":
+                Instantiate(levels[1], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level03":
+                Instantiate(levels[2], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level04":
+                Instantiate(levels[3], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level05":
+                Instantiate(levels[4], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level06":
+                Instantiate(levels[5], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level07":
+                Instantiate(levels[6], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level08":
+                Instantiate(levels[7], Vector3.zero, Quaternion.identity);
+                break;
+            case "Level09":
+                Instantiate(levels[8], Vector3.zero, Quaternion.identity);
+                break;
+        }
+    }
 }
 
 [System.Serializable]

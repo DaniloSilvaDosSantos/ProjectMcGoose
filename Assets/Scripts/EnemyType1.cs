@@ -3,16 +3,22 @@ using UnityEngine;
 public class EnemyType1 : EnemyControler
 {
     public Animator animator;
+    public GroundChecker groundChecker;
 
     public override void Start()
     {
         base.Start();
 
         animator = GetComponent<Animator>();
+        groundChecker = GetComponentInChildren<GroundChecker>();
     }
     public override void EnemyIdleState()
     {
-        //Esse aqui não faz nada por enquanto
+        if(groundChecker.canDie)
+        {
+            currentEnemyState = EnemyState.Dying;
+            animator.SetBool("isDead", true);
+        } 
     }
     void OnTriggerEnter2D(Collider2D other)
     {
