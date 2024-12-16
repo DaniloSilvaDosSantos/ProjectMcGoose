@@ -1144,7 +1144,7 @@ MonoBehaviour:
   winScreenPanel: {fileID: 1255793767670410472}
   freezedScreenPanel: {fileID: 3077606958924202982}
   currentMainMenuState: 0
-  fadeAnimationSpeed: 2
+  fadeAnimationSpeed: 1.5
 --- !u!1 &1255793767670410472
 GameObject:
   m_ObjectHideFlags: 0

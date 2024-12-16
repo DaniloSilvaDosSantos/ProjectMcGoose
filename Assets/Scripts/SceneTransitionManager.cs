@@ -27,21 +27,11 @@ public class SceneTransitionManager : MonoBehaviour
         StartCoroutine(LoadScene(sceneName));
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
     private IEnumerator LoadScene(string sceneName)
     {
-        transitionAnim.SetTrigger("Start");
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        transitionCanvas.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(sceneName);
-        yield return new WaitUntil(() => SceneManager.GetActiveScene().name == sceneName);
         transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(2f);
-        transitionCanvas.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(sceneName);
+        transitionAnim.SetTrigger("Start");
     }
 }
