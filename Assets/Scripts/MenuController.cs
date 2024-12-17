@@ -13,6 +13,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject BlackStarPanel;
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject OpcoesPanel;
+    [SerializeField] private GameObject OpcoesPanelLevel;
     [SerializeField] private GameObject LevelSelectionPanel;
     [SerializeField] private GameObject winScreenPanel;
     [SerializeField] private GameObject freezedScreenPanel;
@@ -33,10 +34,15 @@ public class MenuController : MonoBehaviour
     private Color tempColor;
     [SerializeField] float fadeAnimationSpeed;
     private Radio radio;
+    private GameController gameController;
+    private SceneTransitionManager sceneTransitionManager;
+    private GameObject canvasLevel;
 
     void Start()
     {
         radio = GameObject.Find("Radio").GetComponent<Radio>();
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
@@ -237,13 +243,38 @@ public class MenuController : MonoBehaviour
     {
         winScreenPanel.SetActive(true);
         currentMainMenuState = MainMenuState.WinScreen;
+        GameObject.Find("CanvasLevel").SetActive(false);
     }
 
     public void OpenFreezedScreen()
     {
         freezedScreenPanel.SetActive(true);
         currentMainMenuState = MainMenuState.GameOver;
+        GameObject.Find("CanvasLevel").SetActive(false);
     }
 
-    
+    public void OpenOptionsLevel()
+    {
+        
+        canvasLevel = GameObject.Find("CanvasLevel");
+        canvasLevel.SetActive(false);
+        OpcoesPanelLevel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void GoToMainMenu()
+    {
+        radio.StopMusic();
+        gameController.CurrentLevel = null;
+        sceneTransitionManager.TransitionToScene("MainMenu");
+        Time.timeScale = 1f;
+    }
+
+    public void ExitOptionsLevel()
+    {
+        OpcoesPanelLevel.SetActive(false);
+        canvasLevel.SetActive(true);
+        Time.timeScale = 1f;
+        GameObject.Find("CanvasLevel").SetActive(true);
+    } 
 }

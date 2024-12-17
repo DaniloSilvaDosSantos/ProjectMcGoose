@@ -21,7 +21,24 @@ public class Timer : MonoBehaviour
         contador = GetComponent<TMP_Text>();
 
         starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
-        //starsHud.starsAll[1] = true;
+    }
+
+    private void OnEnable()
+    {
+        if (!stop && rodarRotina)
+        {
+            rodarRotina = false;
+            contadorCoroutine = StartCoroutine(Contador());
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (contadorCoroutine != null)
+        {
+            StopCoroutine(contadorCoroutine);
+            rodarRotina = true;
+        }
     }
 
     void Update()

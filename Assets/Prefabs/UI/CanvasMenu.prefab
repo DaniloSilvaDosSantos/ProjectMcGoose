@@ -1140,6 +1140,7 @@ MonoBehaviour:
   BlackStarPanel: {fileID: 2271834236393605172}
   MainMenuPanel: {fileID: 4800063798264346248}
   OpcoesPanel: {fileID: 5295480600359608958}
+  OpcoesPanelLevel: {fileID: 6671205738518296980}
   LevelSelectionPanel: {fileID: 2193373778714289083}
   winScreenPanel: {fileID: 1255793767670410472}
   freezedScreenPanel: {fileID: 3077606958924202982}
@@ -4572,7 +4573,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 796027881811100542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5541549288937808545
 GameObject:
   m_ObjectHideFlags: 0
@@ -8057,7 +8070,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2904915956186761824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: ExitOptionsLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8905400716151010984
 GameObject:
   m_ObjectHideFlags: 0

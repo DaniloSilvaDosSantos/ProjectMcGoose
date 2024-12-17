@@ -28,7 +28,8 @@ public class WinScreen : MonoBehaviour
 
         for(int i = 0; i < starsCollected.Length; i++)
         {
-            if(starsCollected[i] == true){
+            if(starsCollected[i] == true)
+            {
                 totalStars++;
             } 
         }
