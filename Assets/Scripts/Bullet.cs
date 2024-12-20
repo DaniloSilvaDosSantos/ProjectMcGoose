@@ -1,5 +1,6 @@
 //using Unity.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private AudioClip collectingStar;
     [SerializeField] private AudioClip[] ricochet;
     [SerializeField] private AudioClip[] pinguimScream;
+    [SerializeField] private GameObject shadow;
+    private GameObject shadowInstance;
+    [SerializeField] private float shadowCooldownMax = 0.25f;
+    private float shadowCooldown;
 
     void Start()
     {
@@ -29,6 +34,9 @@ public class Bullet : MonoBehaviour
 
         startsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+
+        shadowCooldown = shadowCooldownMax;
+        shadowInstance = Instantiate(shadow, transform.position, transform.rotation);
     }
 
     void Update()
@@ -46,6 +54,7 @@ public class Bullet : MonoBehaviour
 
             audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
 
+            Destroy(shadowInstance);
             Destroy(gameObject);
         }
 
@@ -57,19 +66,33 @@ public class Bullet : MonoBehaviour
         {
             transform.localScale = originalScale;
         }
+
+        shadowCooldown -= Time.deltaTime;
+        
+        if(shadowCooldown <=0)
+        {
+            shadowCooldown = shadowCooldownMax;
+            SyncPositionAndRotation();
+        }
     }
 
     void ChangingAngleBullet(float velocityX, float velocityY)
     {
-            float newAngle = Mathf.Atan2(velocityY, velocityX) * Mathf.Rad2Deg;
+        float newAngle = Mathf.Atan2(velocityY, velocityX) * Mathf.Rad2Deg;
             
-            if(newAngle != angle){
-                duration --;
-                audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
-            } 
-            angle = newAngle;
+        if(newAngle != angle){
+            duration --;
+            audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
+        } 
+        angle = newAngle;
 
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, newAngle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, newAngle));
+    }
+
+    void SyncPositionAndRotation()
+    {
+        shadowInstance.transform.position = transform.position;
+        shadowInstance.transform.rotation = transform.rotation;
     }
 
     void OnTriggerEnter2D(Collider2D other)

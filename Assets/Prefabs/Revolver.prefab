@@ -193,6 +193,7 @@ MonoBehaviour:
   distanceTrajectoryLine: 4
   shot: {fileID: 8300000, guid: 1d1a1e8056011cb40974ce48a62bf42c, type: 3}
   cockingTheGun: {fileID: 8300000, guid: 6a221298cc2a63f47aa5572eac23d577, type: 3}
+  shakePotency: 100
 --- !u!120 &2345285439002109626
 LineRenderer:
   serializedVersion: 2

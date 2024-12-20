@@ -17,7 +17,7 @@ public class TNTController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
 
         explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         explosion.transform.SetParent(transform);

@@ -19,6 +19,9 @@ public class GunControll : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip shot;
     [SerializeField] private AudioClip cockingTheGun;
+    private MainCamera mainCamera;
+    [SerializeField] private float shakePotency = 100f;
+    
 
     void Start()
     {
@@ -29,6 +32,8 @@ public class GunControll : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         joystick = FindAnyObjectByType<FixedJoystick>();
+
+        mainCamera = GameObject.Find("Main Camera").GetComponent<MainCamera>();
     }
 
     private void Update()
@@ -74,6 +79,8 @@ public class GunControll : MonoBehaviour
                     canShot = false;
 
                     audioSource.PlayOneShot(shot);
+
+                    mainCamera.CauseRumble(shakePotency);
                 }
             }
         }

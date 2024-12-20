@@ -8,11 +8,10 @@ public class ExplosionController : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] private AudioClip collectingStar;
-    [SerializeField] private AudioClip[] pinguimScream;
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
     public void DestroyHimself()
     {
@@ -31,10 +30,6 @@ public class ExplosionController : MonoBehaviour
             startsHud.starsAll[2] = true;
 
             Destroy(other.gameObject);
-        }
-        else if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            audioSource.PlayOneShot(pinguimScream[Random.Range(0, pinguimScream.Length)]);
         }
     }
 }

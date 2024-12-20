@@ -210,6 +210,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 826a339a2c0b3534094c04ef5b99660b, type: 3}
   - {fileID: 8300000, guid: 38fab0024a700bc42904e21cb4d4e717, type: 3}
   - {fileID: 8300000, guid: 4cbd9db558191ff4197d0e157263b7c9, type: 3}
+  shadow: {fileID: 8916805815582282095, guid: 8c6c59c1c87f39843be7a7062aa2c3aa, type: 3}
+  shadowCooldownMax: 0.075
 --- !u!95 &1851540547848624227
 Animator:
   serializedVersion: 5
