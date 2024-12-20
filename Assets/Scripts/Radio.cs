@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class Radio : MonoBehaviour
@@ -41,6 +41,13 @@ public class Radio : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = levelTheme;
+        audioSource.Play();
+    }
+
+    public void PlayCutsceneMusic(AudioClip music)
+    {
+        audioSource.Stop();
+        audioSource.clip = music;
         audioSource.Play();
     }
 

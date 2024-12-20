@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
+//using System.Collections;
+//using System.Collections.Generic;
+//using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using UnityEngine.Rendering;
+//using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {

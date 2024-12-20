@@ -1,8 +1,8 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor.Build.Content;
+//using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     private StartsHud starsHud;
     private Timer timer;
     public string CurrentLevel { get; set; }
+    public int CurrentCutscene { get; set; }
     private string savePath;
 
     void Awake()

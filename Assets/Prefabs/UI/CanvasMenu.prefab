@@ -485,7 +485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589, y: -378}
+  m_AnchoredPosition: {x: 589, y: -377}
   m_SizeDelta: {x: 170, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &915887402026065073
@@ -892,6 +892,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 1980174180618503018}
+  cutscene: -1
 --- !u!1 &655216951887998439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1648,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 5878695129418194175}
+  cutscene: 1
 --- !u!1 &1980174180618503018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +4324,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 2479766870344135757}
+  cutscene: -1
 --- !u!1 &5462320531349453112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5160,6 +5163,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 6949824647489008351}
+  cutscene: 0
 --- !u!1 &5878695129418194175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,6 +5549,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 2487963559240022319}
+  cutscene: -1
 --- !u!1 &6130611286550238580
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,6 +5875,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 6181406907252868204}
+  cutscene: 2
 --- !u!1 &6356315413024106537
 GameObject:
   m_ObjectHideFlags: 0
@@ -7341,6 +7347,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 8130136740051813214}
+  cutscene: -1
 --- !u!1 &8130136740051813214
 GameObject:
   m_ObjectHideFlags: 0
@@ -7801,6 +7808,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 7971571527652412065}
+  cutscene: 3
 --- !u!1 &8615279193185347575
 GameObject:
   m_ObjectHideFlags: 0
@@ -8243,6 +8251,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 6414236834197226127}
+  cutscene: -1
 --- !u!1 &8910566083134751325
 GameObject:
   m_ObjectHideFlags: 0

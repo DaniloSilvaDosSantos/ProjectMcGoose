@@ -1,6 +1,6 @@
-using System.Numerics;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
+//using System.Numerics;
+//using Unity.VisualScripting;
+//using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class EnemyType2 : EnemyControler

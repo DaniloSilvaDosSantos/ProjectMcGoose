@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +13,7 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private Sprite starOff;
     [SerializeField] private bool isLocked;
     [SerializeField] private GameObject lockImage;
+    [SerializeField] private int cutscene = -1; 
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
     private Radio radio;
@@ -117,8 +118,19 @@ public class LevelButton : MonoBehaviour
     public void LoadLevel()
     {
         radio.StopMusic();
-        radio.PlayMusicFunctionDelay("PlayLevelTheme");
+
         gameController.CurrentLevel = gameObject.name;
-        sceneTransitionManager.TransitionToScene("LevelRoom");
+
+        if(cutscene == -1)
+        {
+            radio.PlayMusicFunctionDelay("PlayLevelTheme");
+            sceneTransitionManager.TransitionToScene("LevelRoom");
+        }
+        else
+        {
+            gameController.CurrentCutscene = cutscene;
+            sceneTransitionManager.TransitionToScene("Cutscene");
+        }
+
     }
 }

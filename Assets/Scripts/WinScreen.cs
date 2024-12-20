@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 
 public class WinScreen : MonoBehaviour
@@ -106,7 +106,9 @@ public class WinScreen : MonoBehaviour
                 break;
             case "Level03":
                 gameController.CurrentLevel = "Level04";
-                sceneTransitionManager.TransitionToScene("LevelRoom");
+                radio.StopMusic();
+                gameController.CurrentCutscene = 1;
+                sceneTransitionManager.TransitionToScene("Cutscene");
                 break;
             case "Level04":
                 gameController.CurrentLevel = "Level05";
@@ -118,7 +120,9 @@ public class WinScreen : MonoBehaviour
                 break;
             case "Level06":
                 gameController.CurrentLevel = "Level07";
-                sceneTransitionManager.TransitionToScene("LevelRoom");
+                radio.StopMusic();
+                gameController.CurrentCutscene = 2;
+                sceneTransitionManager.TransitionToScene("Cutscene");
                 break;
             case "Level07":
                 gameController.CurrentLevel = "Level08";
@@ -130,7 +134,9 @@ public class WinScreen : MonoBehaviour
                 break;
             case "Level09":
                 gameController.CurrentLevel = null;
-                sceneTransitionManager.TransitionToScene("MainMenu");
+                radio.StopMusic();
+                gameController.CurrentCutscene = 3;
+                sceneTransitionManager.TransitionToScene("Cutscene");
                 break;
         }
     }
