@@ -37,15 +37,21 @@ public class MenuController : MonoBehaviour
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
     private GameObject canvasLevel;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip shotLevelSelection;
+    [SerializeField] private AudioClip shotMenus;
+    [SerializeField] private AudioClip shotOptions;
 
     void Start()
     {
         radio = GameObject.Find("Radio").GetComponent<Radio>();
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         sceneTransitionManager = GameObject.Find("SceneTransitionManager").GetComponent<SceneTransitionManager>();
+        audioSource = GetComponent<AudioSource>();
 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
+            radio.StopMusic();
             ShowThuthuluPanel();
         }
         else if(SceneManager.GetActiveScene().name == "LevelRoom")
@@ -276,5 +282,20 @@ public class MenuController : MonoBehaviour
         canvasLevel.SetActive(true);
         Time.timeScale = 1f;
         GameObject.Find("CanvasLevel").SetActive(true);
-    } 
+    }
+
+    public void sfxShotLevelSelection()
+    {
+        audioSource.PlayOneShot(shotLevelSelection);
+    }
+
+    public void sfxShotMenus()
+    {
+        audioSource.PlayOneShot(shotMenus);
+    }
+    
+    public void sfxShotOptions()
+    {
+        audioSource.PlayOneShot(shotOptions);
+    }
 }

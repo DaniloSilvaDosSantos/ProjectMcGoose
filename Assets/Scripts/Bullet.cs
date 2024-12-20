@@ -10,10 +10,17 @@ public class Bullet : MonoBehaviour
     private StartsHud startsHud;
     private Vector3 originalScale;
     private GameController gameController;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip collectingStar;
+    [SerializeField] private AudioClip[] ricochet;
+    [SerializeField] private AudioClip[] pinguimScream;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        Debug.Log(audioSource);
+
         rb.AddForce(transform.right * initialShotForce);
 
         angle = transform.rotation.z;
@@ -37,6 +44,8 @@ public class Bullet : MonoBehaviour
         {
             gameController.StartCoroutine(gameController.WinTheLevel());
 
+            audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
+
             Destroy(gameObject);
         }
 
@@ -54,7 +63,10 @@ public class Bullet : MonoBehaviour
     {
             float newAngle = Mathf.Atan2(velocityY, velocityX) * Mathf.Rad2Deg;
             
-            if(newAngle != angle) duration --;
+            if(newAngle != angle){
+                duration --;
+                audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
+            } 
             angle = newAngle;
 
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, newAngle));
@@ -64,12 +76,18 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Object"))
         {
+            audioSource.PlayOneShot(ricochet[Random.Range(0, ricochet.Length)]);
             Destroy(other.gameObject);
         }
-        if(other.gameObject.layer == LayerMask.NameToLayer("Star"))
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Star"))
         {
             startsHud.starsAll[2] = true;
+            audioSource.PlayOneShot(collectingStar);
             Destroy(other.gameObject);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            audioSource.PlayOneShot(pinguimScream[Random.Range(0, pinguimScream.Length)]);
         }
     }
 }

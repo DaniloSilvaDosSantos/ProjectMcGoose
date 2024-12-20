@@ -582,6 +582,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &408213206553173898
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +881,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2578533181134227814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1050,7 @@ GameObject:
   - component: {fileID: 5580776628162434030}
   - component: {fileID: 8332165341864189455}
   - component: {fileID: 8804056419323717847}
+  - component: {fileID: 9089801631301202603}
   m_Layer: 5
   m_Name: CanvasMenu
   m_TagString: Untagged
@@ -1147,6 +1172,105 @@ MonoBehaviour:
   freezedScreenPanel: {fileID: 3077606958924202982}
   currentMainMenuState: 0
   fadeAnimationSpeed: 1.5
+  shotLevelSelection: {fileID: 8300000, guid: 1d1a1e8056011cb40974ce48a62bf42c, type: 3}
+  shotMenus: {fileID: 8300000, guid: d3e22507293af2645940e7a215cbbbea, type: 3}
+  shotOptions: {fileID: 8300000, guid: 33de2a0a8bcf0a449baf35e4106700e4, type: 3}
+--- !u!82 &9089801631301202603
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153172594176730922}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1255793767670410472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1749,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3115895173575040208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,6 +2223,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ExitGane
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2830,6 +2978,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3582064483329609284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3263,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ExitLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3939,6 +4111,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5399326439861124316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4301,6 +4485,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3092577587056261339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,6 +4653,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5508334628841613709
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,6 +4788,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: GoToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4796,6 +5016,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5814520920171906328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4919,6 +5151,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ExitOptionsMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5131,6 +5375,18 @@ MonoBehaviour:
       - m_Target: {fileID: 278049654422761576}
         m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
         m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5526,6 +5782,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3454419135859068587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5852,6 +6120,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7385728957026058545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6149,6 +6429,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2233187465167954572}
         m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
         m_MethodName: LoadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7324,6 +7616,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2098938073554464907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7785,6 +8089,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5472737761684010762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8091,6 +8407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8905400716151010984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,6 +8547,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7524104119531107907}
         m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
         m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8804056419323717847}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: sfxShotLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

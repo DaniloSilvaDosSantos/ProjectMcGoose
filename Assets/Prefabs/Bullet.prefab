@@ -150,7 +150,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.04
 --- !u!58 &6204272578677685804
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2
 --- !u!114 &5337156836332352506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +201,15 @@ MonoBehaviour:
   rb: {fileID: 0}
   initialShotForce: 750
   duration: 3
+  collectingStar: {fileID: 8300000, guid: 8ff68012043ca5e49bafc9928e202496, type: 3}
+  ricochet:
+  - {fileID: 8300000, guid: d3e22507293af2645940e7a215cbbbea, type: 3}
+  - {fileID: 8300000, guid: 17b4e033d0557e444853c26916f5ff90, type: 3}
+  - {fileID: 8300000, guid: 33de2a0a8bcf0a449baf35e4106700e4, type: 3}
+  pinguimScream:
+  - {fileID: 8300000, guid: 826a339a2c0b3534094c04ef5b99660b, type: 3}
+  - {fileID: 8300000, guid: 38fab0024a700bc42904e21cb4d4e717, type: 3}
+  - {fileID: 8300000, guid: 4cbd9db558191ff4197d0e157263b7c9, type: 3}
 --- !u!95 &1851540547848624227
 Animator:
   serializedVersion: 5

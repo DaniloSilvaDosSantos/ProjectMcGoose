@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public string CurrentLevel { get; set; }
     public int CurrentCutscene { get; set; }
     private string savePath;
+    private AudioSource audioSource;
+    [SerializeField] AudioClip collectingStar;
 
     void Awake()
     {
@@ -40,7 +42,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        //
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -96,6 +98,8 @@ public class GameController : MonoBehaviour
     {
         starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
         starsHud.starsAll[0] = true;
+
+        audioSource.PlayOneShot(collectingStar);
     }
 
     public IEnumerator WinTheLevel()
@@ -103,7 +107,7 @@ public class GameController : MonoBehaviour
         timer = GameObject.Find("Timer").GetComponent<Timer>();
         starsHud = GameObject.Find("Stars").GetComponent<StartsHud>();
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         if(CountingEnemies() > 0)
         {
@@ -126,6 +130,7 @@ public class GameController : MonoBehaviour
             {
                 timer.StopTimer();
                 starsHud.starsAll[1] = true;
+                audioSource.PlayOneShot(collectingStar);
             }
 
             yield return new WaitForSeconds(0.5f);

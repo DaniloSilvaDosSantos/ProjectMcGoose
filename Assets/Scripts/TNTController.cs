@@ -10,11 +10,14 @@ public class TNTController : MonoBehaviour
     public Animator animator;
     public GameObject explosionPrefab;
     private GameObject explosion;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip explosionSFX;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
         explosion.transform.SetParent(transform);
@@ -55,5 +58,7 @@ public class TNTController : MonoBehaviour
         CircleCollider2D col;
         col = explosion.GetComponent<CircleCollider2D>();
         col.enabled = true;
+
+        audioSource.PlayOneShot(explosionSFX);
     }
 }

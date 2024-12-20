@@ -16,12 +16,17 @@ public class GunControll : MonoBehaviour
     private float angle;
     private bool canShot;
     private bool isAiming;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip shot;
+    [SerializeField] private AudioClip cockingTheGun;
 
     void Start()
     {
         canShot = true;
         isAiming = false;
         lr = GetComponent<LineRenderer>();
+
+        audioSource = GetComponent<AudioSource>();
 
         joystick = FindAnyObjectByType<FixedJoystick>();
     }
@@ -49,6 +54,8 @@ public class GunControll : MonoBehaviour
 
                 DrawTrajectoryLine(bulletSpawnerTransform, angle - 10);
 
+                if(isAiming == false) audioSource.PlayOneShot(cockingTheGun) ;
+
                 isAiming = true;
             }
             else
@@ -65,13 +72,15 @@ public class GunControll : MonoBehaviour
 
                     isAiming = false;
                     canShot = false;
+
+                    audioSource.PlayOneShot(shot);
                 }
             }
         }
-        else
+        /*else
         {
             //faz algo talvez
-        }
+        }*/
     }
 
     void DrawTrajectoryLine(Transform originPoint, float angleDegree)
