@@ -1,6 +1,7 @@
 //using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinScreen : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class WinScreen : MonoBehaviour
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
     private Radio radio;
+    [SerializeField] private GameObject[] buttons;
 
     void Start()
     {
@@ -138,6 +140,14 @@ public class WinScreen : MonoBehaviour
                 gameController.CurrentCutscene = 3;
                 sceneTransitionManager.TransitionToScene("Cutscene");
                 break;
+        }
+    }
+
+    public void DeactivateButtons()
+    {
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<Button>().interactable = false;
         }
     }
 }

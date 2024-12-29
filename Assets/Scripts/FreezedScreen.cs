@@ -1,6 +1,7 @@
 //using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FreezedScreen : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FreezedScreen : MonoBehaviour
     private GameController gameController;
     private SceneTransitionManager sceneTransitionManager;
     private Radio radio;
+    [SerializeField] private GameObject[] buttons;
     
     void Start()
     {
@@ -27,5 +29,13 @@ public class FreezedScreen : MonoBehaviour
     public void reloadLevel()
     {
         sceneTransitionManager.TransitionToScene("LevelRoom");
+    }
+
+    public void DeactivateButtons()
+    {
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<Button>().interactable = false;
+        }
     }
 }

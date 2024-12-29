@@ -844,7 +844,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -884,6 +884,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1387,6 +1399,9 @@ MonoBehaviour:
   - {fileID: 1507200459, guid: f3227fe5567400c4191fea40e2453afe, type: 3}
   - {fileID: 1376572006, guid: f3227fe5567400c4191fea40e2453afe, type: 3}
   - {fileID: 446227517, guid: f3227fe5567400c4191fea40e2453afe, type: 3}
+  buttons:
+  - {fileID: 6562529824894005778}
+  - {fileID: 5556544125523747051}
 --- !u!1 &1279286742446741075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1727,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1752,6 +1767,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2255,6 +2282,7 @@ GameObject:
   - component: {fileID: 4626755569157488592}
   - component: {fileID: 3437067367076606713}
   - component: {fileID: 4009506330008147544}
+  - component: {fileID: 7551809318389560838}
   m_Layer: 5
   m_Name: LevelSelection
   m_TagString: Untagged
@@ -2333,6 +2361,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7551809318389560838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193373778714289083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c350981421778d3488f05f3d1af3d763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelsButtons:
+  - {fileID: 5866290606775926240}
+  - {fileID: 8905400716151010984}
+  - {fileID: 6095097403671316852}
+  - {fileID: 1784598700095288092}
+  - {fileID: 5421098280672290508}
+  - {fileID: 641499238902966928}
+  - {fileID: 6193405844658112483}
+  - {fileID: 8113535952074997810}
+  - {fileID: 8598171101020848960}
 --- !u!1 &2238543837608269683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,6 +2896,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retryButton: {fileID: 3102845547134401932}
   mainMenuButton: {fileID: 5462320531349453112}
+  buttons:
+  - {fileID: 3102845547134401932}
+  - {fileID: 5462320531349453112}
 --- !u!1 &3102845547134401932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +2994,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2981,6 +3034,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6820527899826291525}
+        m_TargetAssemblyTypeName: FreezedScreen, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3904,6 +3969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823801f87d9b53b4fa2ed0cbde66ad4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 5814520920171906328}
 --- !u!1 &5354975637609743432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,7 +4515,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4488,6 +4555,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4616,7 +4695,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4656,6 +4735,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6820527899826291525}
+        m_TargetAssemblyTypeName: FreezedScreen, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4800,6 +4891,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3690339827650568612}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4979,7 +5082,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5019,6 +5122,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2233187465167954572}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5163,6 +5278,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 277345189331983968}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5347,7 +5474,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5387,6 +5514,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5745,7 +5884,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5785,6 +5924,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6083,7 +6234,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -6123,6 +6274,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6401,7 +6564,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -6441,6 +6604,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2233187465167954572}
+        m_TargetAssemblyTypeName: WinScreen, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6729,6 +6904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823801f87d9b53b4fa2ed0cbde66ad4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 8780727837093333022}
+  - {fileID: 5508334628841613709}
 --- !u!1 &6689081353720997159
 GameObject:
   m_ObjectHideFlags: 0
@@ -7579,7 +7757,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -7619,6 +7797,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8052,7 +8242,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -8101,6 +8291,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5472737761684010762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8124,7 +8326,7 @@ MonoBehaviour:
   starOff: {fileID: -1417281946, guid: 970b64f0280f3a343847864fc1534db5, type: 3}
   isLocked: 0
   lockImage: {fileID: 7971571527652412065}
-  cutscene: 3
+  cutscene: -1
 --- !u!1 &8615279193185347575
 GameObject:
   m_ObjectHideFlags: 0
@@ -8419,6 +8621,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3690339827650568612}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: DeactivateButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8905400716151010984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8519,7 +8733,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -8559,6 +8773,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8804056419323717847}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: sfxShotLevelSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7551809318389560838}
+        m_TargetAssemblyTypeName: LevelSelectionController, Assembly-CSharp
+        m_MethodName: DeactivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
