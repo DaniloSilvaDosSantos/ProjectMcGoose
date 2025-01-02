@@ -72,7 +72,7 @@ public class Cutscene : MonoBehaviour
             }
             else
             {
-                radio.PlayMusicFunctionDelay("PlayLevelTheme");
+                if(sceneToLoad != "GameOver") radio.PlayMusicFunctionDelay("PlayLevelTheme");
                 sceneTransitionManager.TransitionToScene(sceneToLoad);
                 this.enabled = false;
             }

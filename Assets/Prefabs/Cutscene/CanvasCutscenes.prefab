@@ -469,7 +469,7 @@ MonoBehaviour:
   - {fileID: 7116491228057281514}
   currentPhoto: {fileID: 0}
   fadeOut: 0.3
-  sceneToLoad: MainMenu
+  sceneToLoad: GameOver
   radio: {fileID: 0}
   Audio: {fileID: 0}
   turningPages: {fileID: 8300000, guid: 32465634ec44eee49b56e81cb1b2305e, type: 3}
