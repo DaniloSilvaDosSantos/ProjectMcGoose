@@ -12,9 +12,11 @@ public class TNTController : MonoBehaviour
     private GameObject explosion;
     private AudioSource audioSource;
     [SerializeField] private AudioClip explosionSFX;
+    private GameObject sceneTransitionManager;
 
     void Start()
     {
+        sceneTransitionManager = GameObject.Find("SceneTransitionManager");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
@@ -26,7 +28,15 @@ public class TNTController : MonoBehaviour
 
     void OnDestroy()
     {
-        ActivatingExplosion();
+        GameObject sceneTransitionManager = GameObject.Find("SceneTransitionManager");
+
+        if(sceneTransitionManager != null)
+        {
+            if(sceneTransitionManager.GetComponent<SceneTransitionManager>().isLoadingScene == false)
+            {
+                ActivatingExplosion();
+            }
+        }
     }
 
     void Update()
@@ -46,7 +56,7 @@ public class TNTController : MonoBehaviour
     }
 
     
-    void ActivatingExplosion()
+    public void ActivatingExplosion()
     {
         explosion.SetActive(true);
         explosion.transform.SetParent(null);
@@ -58,6 +68,10 @@ public class TNTController : MonoBehaviour
         CircleCollider2D col;
         col = explosion.GetComponent<CircleCollider2D>();
         col.enabled = true;
+
+        ExplosionController explosionController;
+        explosionController = explosion.GetComponent<ExplosionController>();
+        explosionController.enabled = true;
 
         audioSource.PlayOneShot(explosionSFX);
     }

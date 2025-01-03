@@ -8,11 +8,27 @@ public class ExplosionController : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] private AudioClip collectingStar;
+    [SerializeField] private CircleCollider2D explosionCollider;
 
     public void Start()
     {
         audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
+
+    void OnEnable()
+    {
+        explosionCollider = GetComponent<CircleCollider2D>();
+        Invoke("DisableCollider", 0.1f);
+    }
+
+    void DisableCollider()
+    {
+        if (explosionCollider != null)
+        {
+            explosionCollider.enabled = false;
+        }
+    }
+
     public void DestroyHimself()
     {
         Destroy(gameObject);

@@ -8,6 +8,7 @@ public class SceneTransitionManager : MonoBehaviour
     private static SceneTransitionManager instance;
     [SerializeField] Animator transitionAnim;
     [SerializeField] GameObject transitionCanvas;
+    public bool isLoadingScene = false;
 
     private void Awake()
     {
@@ -29,9 +30,12 @@ public class SceneTransitionManager : MonoBehaviour
 
     private IEnumerator LoadScene(string sceneName)
     {
+        isLoadingScene = true;
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneName);
         transitionAnim.SetTrigger("Start");
+        yield return new WaitForSeconds(0.3f);
+        isLoadingScene = false;
     }
 }

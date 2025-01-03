@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4086520832420973261}
   - component: {fileID: 3870258227898743117}
   - component: {fileID: 414363433355393280}
-  - component: {fileID: 6204272578677685804}
+  - component: {fileID: 3934228230610382438}
   - component: {fileID: 5337156836332352506}
   - component: {fileID: 1851540547848624227}
   m_Layer: 7
@@ -151,8 +151,8 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.04
---- !u!58 &6204272578677685804
-CircleCollider2D:
+--- !u!70 &3934228230610382438
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -183,9 +183,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.285
+  m_Offset: {x: -0.05, y: 0}
+  m_Size: {x: 0.7, y: 0.3}
+  m_Direction: 1
 --- !u!114 &5337156836332352506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  initialShotForce: 700
+  initialShotForce: 720
   duration: 3
   collectingStar: {fileID: 8300000, guid: 8ff68012043ca5e49bafc9928e202496, type: 3}
   ricochet:
@@ -211,7 +211,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 38fab0024a700bc42904e21cb4d4e717, type: 3}
   - {fileID: 8300000, guid: 4cbd9db558191ff4197d0e157263b7c9, type: 3}
   shadow: {fileID: 8916805815582282095, guid: 8c6c59c1c87f39843be7a7062aa2c3aa, type: 3}
-  shadowCooldownMax: 0.0825
+  shadowCooldownMax: 0.075
 --- !u!95 &1851540547848624227
 Animator:
   serializedVersion: 5
